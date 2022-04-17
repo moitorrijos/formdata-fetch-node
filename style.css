@@ -1,0 +1,78 @@
+:root {
+  --primary-color: #008ADA;
+  --secondary-color: #00D4B3;
+  --dark-gray: #151110;
+  --medium-gray: #494544;
+  --white: #ffffff;
+}
+
+* > * {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--dark-gray);
+  font-family: 'Montserrat'
+}
+
+form {
+  padding: 2rem 4rem;
+  background: var(--white);
+  max-width: 480px;
+  width: 70%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+form h1 {
+  color: var(--primary-color);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+form label {
+  font-size: 0.9rem;
+  color: var(--medium-gray);
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"] {
+  display: block;
+  border: 0;
+  border-bottom: 2px solid var(--secondary-color);
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 10px;
+  font: inherit;
+  font-size: 1.1rem;
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="email"]:focus {
+  outline: var(--secondary-color) solid 1px;
+}
+
+button {
+  display: block;
+  margin: 2rem auto 1rem;
+  color: var(--white);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 3px;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}
