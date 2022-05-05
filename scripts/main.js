@@ -1,14 +1,18 @@
 const form = document.querySelector('form');
 const button = form.querySelector('button')
-
-form.addEventListener('submit', async (event) => {
+const handleSubmit = async (event) => {
   button.disabled = true
   button.classList.add('loading')
   event.preventDefault()
   const formData = new FormData(form);
+  let formDataObject = Object.fromEntries(formData.entries());
+  let formDataJsonString = JSON.stringify(formDataObject);
   const response = await fetch('/', {
     method: 'POST',
-    body: formData
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: formDataJsonString
   })
   const resJson = await response.json()
   setTimeout(()=>{
@@ -16,4 +20,6 @@ form.addEventListener('submit', async (event) => {
 		button.innerText = 'Enviado'
 	}, 1500)
   console.log(resJson)
-})
+}
+
+form.addEventListener('submit', handleSubmit)
